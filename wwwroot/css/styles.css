@@ -1,11 +1,16 @@
-﻿body {
-    font-family: 'Arial', sans-serif;
+﻿/* Set Persian font for the entire body */
+body {
+    font-family: 'Vazir', sans-serif; /* Ensure you are using a Persian-compatible font like Vazir */
+    direction: rtl; /* Ensure right-to-left text alignment for Persian */
+    text-align: right; /* Align text to the right */
 }
 
+/* Navbar styling with RTL */
 .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Card hover effect */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -15,14 +20,18 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
+/* Footer styling */
 .footer {
     font-size: 0.9rem;
 }
 
+/* Heading style, change color for better visibility */
 h1 {
-    color: #007bff;
+    color: #007bff; /* Consider using a color that contrasts well with the background */
+    text-align: right; /* Align the headings to the right */
 }
 
+/* Button styling */
 .btn-primary {
     background-color: #007bff;
     border: none;
@@ -32,3 +41,22 @@ h1 {
     .btn-primary:hover {
         background-color: #0056b3;
     }
+
+/* Optional: Adjust the sidebar for right-to-left layout */
+.list-group-item {
+    text-align: right; /* Align list items to the right */
+}
+
+/* Right-alignment for the navbar items */
+.navbar-nav {
+    text-align: right; /* Right-align the navbar items */
+}
+
+/* Adjust the dropdown menu to open to the right */
+.dropdown-menu {
+    right: 0 !important; /* Force the menu to appear on the right */
+    left: auto !important; /* Ensure the left alignment is disabled */
+}
+.dropdown-toggle {
+    float: right; /* Align dropdown button to the right */
+}

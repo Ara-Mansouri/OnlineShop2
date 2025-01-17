@@ -1,6 +1,18 @@
-﻿@page
-@model dynamic
+﻿@model IEnumerable<OnlineShop.Models.Category>
 
-<h1>Welcome to the Online Shop</h1>
-<p>Browse our amazing products below:</p>
-<a asp-controller="Product" asp-action="Index" class="btn btn-primary">View Products</a>
+<h1 class="mb-4">دسته بندی محصولات</h1>
+<div class="row">
+    @foreach (var category in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="@category.ImageUrl" class="card-img-top" alt="@category.Name" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">@category.Name</h5>
+                    <a asp-controller="Product" asp-action="ProductsByCategory" asp-route-categoryId="@category.Id" class="btn btn-primary">View Products</a>
+                </div>
+            </div>
+        </div>
+    }
+    
+</div>

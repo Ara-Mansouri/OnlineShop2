@@ -5,28 +5,27 @@ namespace OnlineShop.Controllers
 {
     public class ProductController : Controller
     {
-        // Hardcoded list of products
-        private static readonly List<Product> Products = new List<Product>
+        private static readonly List<Category> Categories = new()
         {
-            new Product { Id = 1, Name = "Laptop", Description = "A high-performance laptop.", Price = 1500.00M, ImageUrl = "/images/laptop.jpg" },
-            new Product { Id = 2, Name = "Smartphone", Description = "A cutting-edge smartphone.", Price = 800.00M, ImageUrl = "/images/phone.jpg" },
-            new Product { Id = 3, Name = "Headphones", Description = "Noise-cancelling headphones.", Price = 200.00M, ImageUrl = "/images/headphones.jpg" }
+            new Category {
+                Id = 1,
+                Name = "Laptops",
+                Products = new List<Product>
+                {
+                    new Product { Id = 1, Name = "Dell XPS 15", Description = "High-performance laptop.", Price = 1500.00M, ImageUrl = "/images/products/dell-xps15.jpg" },
+                    new Product { Id = 2, Name = "MacBook Pro", Description = "Apple's flagship laptop.", Price = 2000.00M, ImageUrl = "/images/products/macbook-pro.jpg" }
+                }
+            },
+            // Add other categories and their products here...
         };
 
-        // Action to display the product list
-        public IActionResult Index()
+        public IActionResult ProductsByCategory(int categoryId)
         {
-            return View(Products);
-        }
-
-        // Action to display a specific product's details
-        public IActionResult Details(int id)
-        {
-            var product = Products.FirstOrDefault(p => p.Id == id);
-            if (product == null)
+            var category = Categories.FirstOrDefault(c => c.Id == categoryId);
+            if (category == null)
                 return NotFound();
 
-            return View(product);
+            return View(category);
         }
     }
 }

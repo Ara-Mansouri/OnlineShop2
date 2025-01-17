@@ -1,52 +1,58 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
+  <!-- Change the language to Persian -->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - OnlineShop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="/">OnlineShop</a>
+            <a class="navbar-brand" href="/">فروشگاه آنلاین</a>  <!-- Change to Persian text for "Online Shop" -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link active" href="/">خانه</a> <!-- Change "Home" to Persian -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Product">Products</a>
+                        <a class="nav-link" href="/Product">محصولات</a> <!-- Change "Products" to Persian -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Home/About">About Us</a>
+                        <a class="nav-link" href="/Home/About">درباره ما</a> <!-- Change "About Us" to Persian -->
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="container mt-4">
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="/Product" class="list-group-item list-group-item-action">Products</a>
-                    <a href="/Home/About" class="list-group-item list-group-item-action">About Us</a>
+                    <a href="/Product" class="list-group-item list-group-item-action">محصولات</a> <!-- Change "Products" to Persian -->
+                    <a href="/Home/About" class="list-group-item list-group-item-action">درباره ما</a> <!-- Change "About Us" to Persian -->
                 </div>
             </div>
+
             <!-- Main Content -->
             <div class="col-md-9">
                 @RenderBody()
             </div>
         </div>
     </div>
+
     <footer class="bg-primary text-white text-center py-3 mt-4">
-        <p>&copy; 2024 OnlineShop. All Rights Reserved.</p>
+        <p>&copy; 2024 فروشگاه آنلاین. تمامی حقوق محفوظ است.</p> <!-- Change to Persian -->
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/scripts.js"></script>
 </body>
