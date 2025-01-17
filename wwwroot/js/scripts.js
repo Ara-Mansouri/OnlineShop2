@@ -1,8 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
     const products = [
-        { id: 1, name: "Laptop", description: "A high-performance laptop.", price: 1500.0, imageUrl: "/images/laptop.jpg" },
-        { id: 2, name: "Smartphone", description: "A cutting-edge smartphone.", price: 800.0, imageUrl: "/images/phone.jpg" },
-        { id: 3, name: "Headphones", description: "Noise-cancelling headphones.", price: 200.0, imageUrl: "/images/headphones.jpg" },
+        { id: 1, name: "Laptop", description: "لپ‌تاپ اقتصادی و کاربردی", price: 45450000, imageUrl: "/images/products/vivabook.jpg" },
+        { id: 2, name: "MacBook Pro", description: "Apple's flagship laptop.", price: 2000.0, imageUrl: "/images/products/macbook-pro.jpg" }
     ];
 
     const quickViewButtons = document.querySelectorAll(".btn-quick-view");
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalProductPrice = document.getElementById("modalProductPrice");
 
     quickViewButtons.forEach((button) => {
-        button.addEventListener("click", (e) => {
+        button.addEventListener("click", () => {
             const productId = parseInt(button.getAttribute("data-id"));
             const product = products.find((p) => p.id === productId);
 
@@ -20,9 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 modalProductName.textContent = product.name;
                 modalProductImage.src = product.imageUrl;
                 modalProductDescription.textContent = product.description;
-                modalProductPrice.textContent = `$${product.price.toFixed(2)}`;
+                modalProductPrice.textContent = product.price+" تومان ";
 
-                // Show modal
                 const productModal = new bootstrap.Modal(document.getElementById("productModal"));
                 productModal.show();
             }

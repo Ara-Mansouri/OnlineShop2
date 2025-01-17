@@ -1,20 +1,41 @@
 ﻿@model OnlineShop.Models.Category
 
-<h1 class="mb-4">@Model.Name</h1>
-<div class="row">
-    @foreach (var product in Model.Products)
-    {
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" />
-                <div class="card-body">
-                    <h5 class="card-title">@product.Name</h5>
-                    <p class="card-text">@product.Description</p>
-                    <p class="card-text text-primary">@product.Price.ToString("C")</p>
-                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="btn btn-primary">View Details</a>
+<div class="container">
+    <h1>@Model.Name</h1>
+
+    <div class="row">
+        @foreach (var product in Model.Products)
+        {
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="@product.ImageUrl" alt="@product.Name" class="card-img-top" />
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text text-primary">@product.Price.ToString() تومان</p>
+                            <button class="btn btn-primary btn-quick-view" data-id="@product.Id">جزئیات محصول</button>
+                        </div>
+                    </div>
                 </div>
+        }
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="productModal" class="modal fade" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modalProductName" class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="برگشت"></button>
+            </div>
+            <div class="modal-body">
+                <img id="modalProductImage" src="" alt="" class="img-fluid mb-3" />
+                <p id="modalProductDescription"></p>
+                <p id="modalProductPrice" class="text-primary"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
-    }
-    
+    </div>
 </div>

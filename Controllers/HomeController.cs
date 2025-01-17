@@ -7,7 +7,7 @@ namespace OnlineShop.Controllers
     {
         private static readonly List<Category> Categories = new()
         {
-            new Category { Id = 1, Name = "لپتاپ و تبلت", ImageUrl = "/images/categories/laptops.jpg" },
+            new Category { Id = 1, Name = "لپتاپ و تبلت", ImageUrl = "/images/categories/laptops.jpg"  },
             new Category { Id = 2, Name = "لوازم جانبی کامپیوتر", ImageUrl = "/images/categories/monitors.jpg" },
             new Category { Id = 3, Name = "هدفون و هندزفری", ImageUrl = "/images/categories/headphones.jpg" },
             new Category { Id = 4, Name = "گیمینگ", ImageUrl = "/images/categories/ps5.jpg" },
@@ -18,6 +18,14 @@ namespace OnlineShop.Controllers
         public IActionResult Index()
         {
             return View(Categories);
+        }
+        public IActionResult HomePage()
+        {
+            return View();
+        }
+        public IActionResult About()
+        {
+            return View();
         }
     }
 }
