@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<OnlineShop.Models.Category>
 
-<h1 class="mb-4">دسته بندی محصولات</h1>
+<h1 class="mb-4" style="color: #2565AE;">دسته بندی محصولات</h1>
 <div class="row">
     @foreach (var category in Model)
     {
@@ -9,7 +9,7 @@
                 <img src="@category.ImageUrl" class="card-img-top" alt="@category.Name" />
                 <div class="card-body text-center">
                     <h5 class="card-title">@category.Name</h5>
-                    <a asp-controller="Product" asp-action="ProductsByCategory" asp-route-categoryId="@category.Id" class="btn btn-primary">View Products</a>
+                    <a asp-controller="Product" asp-action="ProductsByCategory" asp-route-categoryId="@category.Id" class="btn btn-primary">نمایش محصولات</a>
                 </div>
             </div>
         </div>
