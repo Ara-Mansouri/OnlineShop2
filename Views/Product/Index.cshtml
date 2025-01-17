@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OnlineShop.Models.Product>
+
+<h1 class="mb-4">Our Products</h1>
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card product-card">
+                <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" />
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Description</p>
+                    <p class="card-text text-primary">@product.Price.ToString("C")</p>
+                    <button class="btn btn-primary btn-quick-view" data-id="@product.Id">Quick View</button>
+                </div>
+            </div>
+        </div>
+    }
+    }
+</div>
+
+<!-- Modal for Quick View -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 id="modalProductName"></h5>
+                <img id="modalProductImage" src="" alt="" class="img-fluid mb-3" />
+                <p id="modalProductDescription"></p>
+                <p class="text-primary" id="modalProductPrice"></p>
+            </div>
+        </div>
+    </div>
+</div>
