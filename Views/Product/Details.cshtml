@@ -4,6 +4,14 @@
     <h1>@Model.Name</h1>
     <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid mb-4" />
     <p>@Model.Description</p>
-    <p class="text-primary">@Model.Price.ToString()تومان </p>
-    <a href="/Product/ProductsByCategory?categoryId=@Model.CategoryId" class="btn btn-secondary">Back to Products</a>
+    <p class="text-primary">@Model.Price.ToString() تومان</p>
+
+    <!-- Add to Cart Button -->
+    <button class="btn btn-success add-to-cart-btn"
+            data-id="@Model.Id"
+            data-name="@Model.Name"
+            data-price="@Model.Price"
+            data-image="@Model.ImageUrl">
+        Add to Cart
+    </button>
 </div>

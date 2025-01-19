@@ -24,15 +24,23 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+                <h5 class="modal-title" id="modalProductName"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h5 id="modalProductName"></h5>
-                <img id="modalProductImage" src="" alt="" class="img-fluid mb-3" />
+                <img id="modalProductImage" class="img-fluid mb-3" alt="Product Image" />
                 <p id="modalProductDescription"></p>
                 <p class="text-primary" id="modalProductPrice"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- Add to Cart Button -->
+                <button type="button" id="modalAddToCartBtn"
+                        class="btn btn-success" data-bs-dismiss="modal">
+                    Add to Cart
+                </button>
             </div>
         </div>
     </div>
 </div>
+
